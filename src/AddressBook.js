@@ -10,4 +10,8 @@ class AddressBook {
   getContact(contact) {
     return this.contacts[contact];
   }
+
+  deleteContact(contact) {
+    this.contacts.splice(contact, 1);
+  }
 }
