@@ -1,6 +1,7 @@
 class AddressBook {
   constructor() {
     this.contacts = [];
+    this.initialComplete = false;
   }
 
   addContact(newContact) {
@@ -13,5 +14,15 @@ class AddressBook {
 
   deleteContact(contact) {
     this.contacts.splice(contact, 1);
+  }
+
+  getInitialContacts(callback) {
+    // fake some asynchronicity
+    setTimeout(()=>{
+      this.initialComplete = true;
+      if (callback) {
+        return callback();
+      }
+    }, 3);
   }
 }
